@@ -6,7 +6,11 @@ function instantRunoff(arr) {
         arr.map((ele) => {
             if (ele.length > 0) {
                 while (losers.has(ele[0])) {
-                    ele[0].shift()
+                    if (ele.length === 0){
+                        break;
+                    }
+                    console.log(ele)
+                    ele.shift();
                 }
                 if (ele.length > 0) {
                     if (tally[ele[0]]) {
