@@ -36,6 +36,9 @@ function instantRunoff(arr) {
                 min = tally[candidate];
                 minCandidate = candidate
             }
+            if (tally[candidate]>=Math.ceil(arr.length/2)){
+                return new Set(candidate);
+            }
         });
         candidates.delete(minCandidate);
         losers.add(minCandidate)
